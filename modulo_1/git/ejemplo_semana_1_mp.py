@@ -1,1 +1,1 @@
-print("este es un ejmplo de la biblioteca git")
+print("este es un ejmplo de la bibliotgiteca git")
