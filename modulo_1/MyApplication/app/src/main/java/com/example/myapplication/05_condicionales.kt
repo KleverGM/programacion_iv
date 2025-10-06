@@ -15,12 +15,29 @@ fun main(){
     if (fuerza > 10){
         println("Maestro")
     } else if (fuerza > 5){
+        println("caballero jedi")
     } else {
         println("Padawan")
     }
 
-    modelo: String = "R2_D2"
-    when(modelo: String){
 
+    var tipodroide: String = "BB-8"
+    when(tipodroide){
+        "R2-D2", "R2-Q5"->print("Droide astromecanico")
+        "C-3PO", "C-#PA"->print("Droide de protocolo")
+        "BBB-8", "BB-9E"->print("Droide de nueva generecion")
+        else->print("Modelos desconocido")
     }
+
+    var peligro: Int = 10
+    var recompensa: Int = 50
+    when{
+        peligro>8 && recompensa < 1000->print("Mision rechazada")
+        peligro <=3 ->print("Mision aceptada")
+        else->print("Requiere evaluacion adicional")
+    }
+
+
+
 }
+
