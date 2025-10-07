@@ -15,13 +15,4 @@ fun main(){
     println(curso1 === curso2)
     println(curso1 === curso3)
 
-    //Data class (Curso) -> igualdad por contenido
-    val cA = Curso(1, "Kotlin desde cero")
-    val cB = Curso(1, "Kotlin desde cero")
-    val cC = cA
-
-    println("Data class Curso - igualdad estructural")
-    println(cA == cB)    
-    println(cA === cB)  
-    println(cA === cC)  
 }
