@@ -7,7 +7,7 @@ print("operaciones Aritmeticas");
   print("resta $number1 - $number2 = ${number1 - number2}");
   print("multi $number1 * $number2 = ${number1 * number2}");
   print("division $number1 / $number2 = ${number1 / number2}");
-}
+
   int a = 2;
   int b = 3;
   

@@ -1,9 +1,4 @@
-/**
- * Ejercicio 2: Detector de vocales consecutivas
- * Cuenta cuántas veces aparecen dos vocales seguidas en un texto.
- */
 fun main() {
-    println("== DETECTOR DE VOCALES CONSECUTIVAS ==")
     println("Ingresa un texto:")
     val texto = readln().lowercase()
     
@@ -16,6 +11,5 @@ fun main() {
             println("Vocales consecutivas encontradas: ${texto[i]}${texto[i+1]}")
         }
     }
-    
     println("Total de vocales consecutivas encontradas: $contadorVocalesConsecutivas")
 }
