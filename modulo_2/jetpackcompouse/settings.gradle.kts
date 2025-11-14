@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "helloejetpackcompose"
 include(":app")
+include(":app")
+ 
