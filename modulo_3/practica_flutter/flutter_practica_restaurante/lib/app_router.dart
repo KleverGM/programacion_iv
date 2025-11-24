@@ -10,7 +10,7 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (_, __) => CombosPage(),
+      builder: (_, __) => const ComboPage(),
     ),
     GoRoute(
       path: '/home',
