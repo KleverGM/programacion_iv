@@ -7,7 +7,7 @@ export function TypeScriptDemo() {
   const version: number = 3.0;
   const isActive: boolean = true;
   const tags: string[] = ["react", "native", "typescript"];
-  const scores: Record<string, number> = { 
+  const _scores: Record<string, number> = { 
     "juan": 95, 
     "ana": 88 
   };

@@ -43,10 +43,11 @@ export function StateExample() {
           </View>
         );
         
-      default:
+      default: {
         // TypeScript asegura que cubrimos todos los casos
         const _exhaustiveCheck: never = state;
         return null;
+      }
     }
   };
   
