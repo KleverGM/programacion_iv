@@ -1,29 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Parte05Lab } from "./src/screens/Parte05Lab";
+import { Parte07Lab } from "./src/screens/Parte07Lab";
+import { ClockDemo } from "@/screens/ClockDemo";
 
 export default function App() {
   return (
     <>
-      <Parte05Lab />
+      <ClockDemo />
+      <StatusBar style="light" />
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#0d1117",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 16,
-  },
-  texto: {
-    flex: 1,
-    color: "#ffffff",
-    backgroundColor: "#0d1117",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: 18,
-  },
-});

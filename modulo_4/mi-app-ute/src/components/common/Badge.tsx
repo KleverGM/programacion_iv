@@ -11,6 +11,7 @@ export function Badge({ label, variant = "INFO" }: BadgeProps) {
   const bg =
     variant === "SUCCESS" ? "#1f6feb" :
     variant === "WARNING" ? "#d29922" :
+    variant === "INFO" ? "#238636" :
     variant === "DANGER" ? "#f85149" :
     "#30363d";
 

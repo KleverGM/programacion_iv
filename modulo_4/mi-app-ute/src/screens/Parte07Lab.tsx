@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Card } from "../components/common/Card";
-import { Badge } from "../components/common/Badge";
-import { PrimaryButton } from "../components/common/PrimaryButton";
-import { DemoScreen } from "./DemoScreen";
-
-
-export function Parte05Lab() {
+import { Counter } from "./Counter";
+import { LoginFormDemo } from "./LoginFormDemo";
+import { promedio_notas as PromedioNotas } from "./promedio_notas";
+export function Parte07Lab() {
   return (
-    <View style={styles.container}>
-        <DemoScreen />
+    <View style={styles.stage}>
+      <PromedioNotas />
     </View>
   );
 }
