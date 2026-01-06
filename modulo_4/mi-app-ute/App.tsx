@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { Parte07Lab } from "./src/screens/Parte07Lab";
-import { ClockDemo } from "@/screens/ClockDemo";
+import { Parte10Lab } from "./src/screens/Parte10Lab";
 
 export default function App() {
   return (
     <>
-      <ClockDemo />
+      <Parte10Lab />
       <StatusBar style="light" />
     </>
   );

@@ -1,59 +1,53 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
-type TodoDTO = { id: number; title: string };
+type PostDTO = { id: number; title: string };
 
-export function UseEffectAsyncDemo() {
-  const [items, setItems] = useState<TodoDTO[]>([]);
+export function AbortFetchDemo() {
+  const [posts, setPosts] = useState<PostDTO[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let cancelled = false;
+    const controller = new AbortController();
 
     async function load() {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const res = await fetch(
-          "https://jsonplaceholder.typicode.com/todos?_limit=15"
-        );
-        const data = (await res.json()) as TodoDTO[];
-
-        if (!cancelled) setItems(data);
-      } catch (e) {
-        if (!cancelled) setError("No se pudo cargar");
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
+      setLoading(true);
+      const res = await fetch(
+        "https://jsonplaceholder.typicode.com/posts?_limit=3",
+        {
+          signal: controller.signal,
+        }
+      );
+      const data = (await res.json()) as PostDTO[];
+      setPosts(data);
+      setLoading(false);
     }
 
-    load();
+    load().catch(() => {
+      setLoading(false);
+    });
 
     return () => {
-      cancelled = true;
+      controller.abort();
     };
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>useEffect + async</Text>
+      <Text style={styles.title}>AbortController</Text>
 
       {loading ? (
         <View style={styles.row}>
           <ActivityIndicator />
-          <Text style={styles.body}>Cargando...</Text>
+          <Text style={styles.body}>Cargando posts...</Text>
         </View>
       ) : null}
 
-      {error ? <Text style={styles.error}>{error}</Text> : null}
-
-      {!loading && !error ? (
+      {!loading ? (
         <View style={styles.list}>
-          {items.map((t) => (
-            <Text key={t.id} style={styles.item}>
-              • {t.title}
+          {posts.map((p) => (
+            <Text key={p.id} style={styles.item}>
+              • {p.title}
             </Text>
           ))}
         </View>
@@ -83,11 +77,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
-  },
-  error: {
-    color: "#f85149",
-    fontWeight: "800",
     marginBottom: 10,
   },
   list: {

@@ -1,14 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import { AbortFetchDemo } from "./AbortFetchDemo";
-import { ConsumoApi } from "./consumo_api";
-export function Parte08Lab() {
+import { ProductsMemoDemo } from "./ProductsMemoDemo";
+import { CallbackDemo } from "./CallbackDemo";
+
+
+export function Parte09Lab() {
   return (
     <View style={styles.container}>
-      <Text style={styles.h1}>Parte 8 Lab — useEffect</Text>
+      <Text style={styles.h1}>Parte 9 Lab — useMemo / useCallback</Text>
 
       {/* Cambia aquí qué ejemplo estás probando */}
       <View style={styles.stage}>
-        <ConsumoApi />
+        <CallbackDemo />
       </View>
     </View>
   );
